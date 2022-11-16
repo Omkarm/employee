@@ -16,6 +16,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 // import "@fortawesome/fontawesome-free/css/all.min.css";
 // import "bootstrap-css-only/css/bootstrap.min.css";
 // import "mdbreact/dist/css/mdb.css";
+// dqd
 
 import Navbar from "./Pages/Components/Navbar";
 import Navbar1 from "./Pages/Components/NavBar1";
