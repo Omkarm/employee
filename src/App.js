@@ -59,7 +59,7 @@ function App() {
           <Route path="/about" element={<About></About>} />
           <Route
             path="/dashboard"
-            element={[<Dashboard></Dashboard>, <Home></Home>, <Account />]}
+            element={[<Dashboard></Dashboard>, <Home></Home>]}
           />
           <Route
             path="/employee"
