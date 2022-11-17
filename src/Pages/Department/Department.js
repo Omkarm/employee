@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { green } from "@mui/material/colors";
 import { CSVLink } from "react-csv";
+import Footer from "../Components/Footer";
 
 const Department = () => {
   const [getuserdata, setUserdata, setDLTdata] = useState([]);
@@ -40,7 +41,7 @@ const Department = () => {
 
   const deleteuser = async (EmployeeCode) => {
     const res2 = await fetch(
-      `http://localhost:5000/department/delete/${EmployeeCode}`,
+      `https://329i7alj9c.execute-api.us-east-1.amazonaws.com/department/delete/${EmployeeCode}`,
       {
         method: "DELETE",
         headers: {
@@ -74,127 +75,123 @@ const Department = () => {
               {" "}
               <h3>Department Management System</h3>
             </div>
-            <div className="card-body">
-              {/* <h5 class="card-title">Special title treatment</h5> */}
-              <div className="mt">
-                <div className="container-fluid box">
-                  {/* <div className="ems">
+            {/* <h5 class="card-title">Special title treatment</h5> */}
+            <div className="mt">
+              <div className="container-fluid box">
+                {/* <div className="ems">
                     <h3>Department Management System</h3>
                   </div> */}
-                  <div className="add_btn  ">
-                    <div className="addbuttons">
-                      <NavLink
-                        to="/deptregister"
-                        className="btn btn-primary btn-sm "
-                      >
-                        Add Department +
-                      </NavLink>{" "}
-                      <CSVLink
-                        data={getuserdata}
-                        className="btn btn-success btn-sm "
-                      >
-                        Export to Excel
-                      </CSVLink>
-                      {/* <NavLink
+                <div className="add_btn  ">
+                  <div className="addbuttons">
+                    <NavLink
+                      to="/deptregister"
+                      className="btn btn-primary btn-sm "
+                    >
+                      Add Department +
+                    </NavLink>{" "}
+                    <CSVLink
+                      data={getuserdata}
+                      className="btn btn-success btn-sm "
+                    >
+                      Export to Excel
+                    </CSVLink>
+                    {/* <NavLink
                   to="/deptregister"
                   className="btn btn-light border-dark rounded-pill"
                 >
                   Add Department
                 </NavLink> */}
-                    </div>
                   </div>
+                </div>
 
-                  <table class="table table-bordered border auto-index">
-                    <thead>
-                      <tr className="table-light">
-                        <th scope="col">Action</th>
-                        <th scope="col">Sr No</th>
-                        <th scope="col">EmployeeCode</th>
-                        {/* <th scope="col">DepartmentID</th> */}
+                <table class="table table-bordered border auto-index">
+                  <thead>
+                    <tr className="table-light">
+                      <th scope="col">Action</th>
+                      <th scope="col">Sr No</th>
+                      <th scope="col">EmployeeCode</th>
+                      {/* <th scope="col">DepartmentID</th> */}
 
-                        <th scope="col">FirstName</th>
-                        <th scope="col">LastName</th>
+                      <th scope="col">FirstName</th>
+                      <th scope="col">LastName</th>
 
-                        <th scope="col">Department Name</th>
-                        <th scope="col">Department Head</th>
-                        <th scope="col">DateOfJoining</th>
-                        <th scope="col">LastDate</th>
-                        <th scope="col">Status</th>
-                        <th scope="col"></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {getuserdata.map((element, id) => {
-                        return (
-                          <>
-                            <tr>
-                              <td>
-                                <NavLink
-                                  to={`/departedit/${element.EmployeeCode}`}
-                                >
-                                  <button className="btn btn-link">
-                                    <b>edit</b>
-                                  </button>
-                                </NavLink>
-                              </td>
-                              <td>
-                                <b>{id++}</b>
-                              </td>
-                              <th scope="row">{element.EmployeeCode}</th>
-                              {/* <td>
+                      <th scope="col">Department Name</th>
+                      <th scope="col">Department Head</th>
+                      <th scope="col">DateOfJoining</th>
+                      <th scope="col">LastDate</th>
+                      <th scope="col">Status</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {getuserdata.map((element, id) => {
+                      return (
+                        <>
+                          <tr>
+                            <td>
+                              <NavLink
+                                to={`/departedit/${element.EmployeeCode}`}
+                              >
+                                <button className="btn btn-link">
+                                  <b>edit</b>
+                                </button>
+                              </NavLink>
+                            </td>
+                            <td>
+                              <b>{id++}</b>
+                            </td>
+                            <th scope="row">{element.EmployeeCode}</th>
+                            {/* <td>
                           <b>{element.DepartmentID}</b>
                         </td> */}
-                              <td>
-                                <b>{element.EmployeeFirstName}</b>
-                              </td>
-                              <td>
-                                <b>{element.EmployeeLastName}</b>
-                              </td>
-                              <td>
-                                <b>{element.DepartmentName}</b>
-                              </td>
-                              <td>
-                                <b>{element.DepartmentHead}</b>
-                              </td>
-                              <td>
-                                <b>{element.DateOfJoining}</b>
-                              </td>
-                              <td>
-                                <b>{element.LastDate}</b>
-                              </td>
+                            <td>
+                              <b>{element.EmployeeFirstName}</b>
+                            </td>
+                            <td>
+                              <b>{element.EmployeeLastName}</b>
+                            </td>
+                            <td>
+                              <b>{element.DepartmentName}</b>
+                            </td>
+                            <td>
+                              <b>{element.DepartmentHead}</b>
+                            </td>
+                            <td>
+                              <b>{element.DateOfJoining}</b>
+                            </td>
+                            <td>
+                              <b>{element.LastDate}</b>
+                            </td>
 
-                              <td>
-                                <b>{element.Status}</b>
-                              </td>
+                            <td>
+                              <b>{element.Status}</b>
+                            </td>
 
-                              <td className="d-flex justify-content-between ">
-                                {/* <NavLink
+                            <td className="d-flex justify-content-between ">
+                              {/* <NavLink
                             to={`/departdetails/${element.EmployeeCode}`}
                           >
                             <button className="btn btn-success">read</button>
                           </NavLink> */}
-                                {/* <NavLink to={`/departedit/${element.EmployeeCode}`}>
+                              {/* <NavLink to={`/departedit/${element.EmployeeCode}`}>
                             <button className="btn btn-primary">update</button>
                           </NavLink> */}
-                                {/* <NavLink to={`/deleteuser/${element._id}`}>
+                              {/* <NavLink to={`/deleteuser/${element._id}`}>
                           <button className="btn btn-danger">Delete</button>
                           </NavLink> */}
-                                <button
-                                  className="btn btn-danger"
-                                  onClick={() =>
-                                    deleteuser(element.EmployeeCode)
-                                  }
-                                >
-                                  delete
-                                </button>
-                              </td>
-                            </tr>
-                          </>
-                        );
-                      })}
-                    </tbody>
-                  </table>
-                </div>
+                              <button
+                                className="btn btn-danger"
+                                onClick={() => deleteuser(element.EmployeeCode)}
+                              >
+                                delete
+                              </button>
+                            </td>
+                          </tr>
+                        </>
+                      );
+                    })}
+                  </tbody>
+                </table>
               </div>
             </div>
             {/* <nav aria-label="Page navigation example">
@@ -224,9 +221,11 @@ const Department = () => {
                 </li>
               </ul>
             </nav> */}
-            <div class="card-footer text-muted">
-              copyright @ 2022 Omkar More
-            </div>
+          </div>
+          <div>
+            <br></br>
+            <Footer />
+            <br></br>
           </div>
         </div>
       </div>

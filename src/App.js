@@ -19,7 +19,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 // dqd
 
 import Navbar from "./Pages/Components/Navbar";
-import Navbar1 from "./Pages/Components/NavBar1";
+import Footer from "./Pages/Components/Footer";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Login/signup";
 import Home from "./Pages/Components/Home";
@@ -50,6 +50,7 @@ function App() {
       {/* <Navbar1 /> */}
 
       <BrowserRouter>
+        <Account />
         <Routes>
           <Route path="/login" element={<Login></Login>} />
 
@@ -63,7 +64,7 @@ function App() {
           />
           <Route
             path="/employee"
-            element={[<Employee></Employee>, <Home></Home>, <Account />]}
+            element={[<Employee></Employee>, <Home></Home>]}
           />
           <Route
             path="/department"
@@ -82,7 +83,11 @@ function App() {
 
           <Route
             path="/deptregister"
-            element={<DepartRegister></DepartRegister>}
+            element={[
+              <DepartRegister></DepartRegister>,
+              <Home></Home>,
+              <Account></Account>,
+            ]}
           />
           <Route path="/empview" element={<EmployeeView></EmployeeView>} />
           <Route

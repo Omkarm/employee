@@ -144,6 +144,46 @@ const Dashboard = () => {
                 </div>
               </div>{" "}
             </div>
+            ////////////////////////////////
+            <div class="col">
+              <div class="card2">
+                <div class="card-body2">
+                  <div class="head">
+                    <h5> Project</h5>
+                    {/* <h5> Count 50 </h5> */}
+                  </div>
+                  <div className="count">
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        aria-label="Example with label"
+                        style={{ width: "50%" }}
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        50%
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="empbtn">
+                    <button type="button" class="btn btn-dark ">
+                      <a
+                        className="nav-link active"
+                        aria-current="page"
+                        href="/employee"
+                        style={{ textAlign: "center" }}
+                      >
+                        {"   "}
+                        view
+                      </a>
+                    </button>{" "}
+                  </div>
+                </div>
+              </div>{" "}
+            </div>
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
           </div>
         </div>

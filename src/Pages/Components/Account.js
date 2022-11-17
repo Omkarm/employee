@@ -8,47 +8,50 @@ import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 const Account = () => {
   return (
-    <div className="splittop1 top">
-      {/* <img src={"./logo1.png"} height="50"></img> */}
-
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        {/* <div class="imgalign">
-          {" "}
+    <div className="main">
+      <div className="splittop">
+        <div className="imgalign">
           <img src={"./logo1.png"} height="50"></img>
-        </div> */}
-        <h4>Omkar More</h4>
-        <div className="nav-item dropdown">
-          <a
-            className="nav-link active dropdown-toggle"
-            role="button"
-            data-bs-toggle="dropdown"
-          >
-            <AccountCircleRoundedIcon fontSize="large" />
-          </a>
-          <ul className="dropdown-menu dropbox">
-            <li>
-              <a className="dropdown-item" href="/account">
-                Account
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="/personalproject">
-                Personal Projects
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="/settings">
-                Settings
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="/signout">
-                SignOut
-              </a>
-            </li>
-          </ul>
         </div>
-        &nbsp;&nbsp;&nbsp;
+      </div>
+      <div className="splittop1 top">
+        <div class="d-flex justify-content-end">
+          <p class="text-end">
+            <h4>Omkar More</h4>
+          </p>
+          <div className="nav-item dropdown">
+            <a
+              className="nav-link active dropdown-toggle"
+              role="button"
+              data-bs-toggle="dropdown"
+            >
+              <AccountCircleRoundedIcon fontSize="large" />
+            </a>
+            <ul className="dropdown-menu dropbox">
+              <li>
+                <a className="dropdown-item" href="/account">
+                  Account
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="/personalproject">
+                  Personal Projects
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="/settings">
+                  Settings
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="/signout">
+                  SignOut
+                </a>
+              </li>
+            </ul>
+          </div>
+          &nbsp;&nbsp;&nbsp;
+        </div>
       </div>
     </div>
   );

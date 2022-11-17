@@ -12,6 +12,8 @@ import {
   useParams,
 } from "react-router-dom";
 import { Switch } from "@mui/material";
+import Footer from "../Components/Footer";
+
 const DepartRegister = () => {
   const [inpval, setINP] = useState({
     EmployeeCode: "",
@@ -146,310 +148,293 @@ const DepartRegister = () => {
       {/* <!-- Account page navigation--> */}
       <div className="splitr right">
         <div class="row">
-          <div class="col-xl-8">
+          <div class="col-xl-12">
             {/* <!-- Account details card--> */}
             <div class="card mb-4">
               <div class="card-header">Employee Joining Details</div>
-              <div class="card-body">
-                <form>
-                  {/* -----------------------------------------------EmployeeCode------------------------------------------------------- */}
-                  <div class="mb-3">
-                    <label class="small mb-1" for="inputUsername">
-                      Employee Code:
+              <br></br>
+              <form>
+                {/* -----------------------------------------------EmployeeCode------------------------------------------------------- */}
+                <div class="mb-3">
+                  <label class="small mb-1" for="inputUsername">
+                    Employee Code:
+                  </label>
+                  <form class="col-md-12">
+                    <select
+                      class="form-control select2"
+                      value={inpval.EmployeeCode}
+                      name="EmployeeCode"
+                      onChange={setdata}
+                    >
+                      <option>Select Code----</option>
+
+                      {getuserdata.map((element, id) => {
+                        return (
+                          <>
+                            <option>{element.EmployeeCode}</option>
+                          </>
+                        );
+                      })}
+                    </select>
+                  </form>
+                </div>
+
+                {/* -----------------------------------------------Department ID:------------------------------------------------------- */}
+                <div class="mb-3">
+                  <label class="small mb-1" for="inputUsername">
+                    Department ID:
+                  </label>
+                  <form class="col-md-12">
+                    <select
+                      class="form-control select2"
+                      value={inpval.DepartmentID}
+                      name="DepartmentID"
+                      onChange={setdata}
+                    >
+                      <option>Select Code----</option>
+
+                      {getuserdata.map((element, id) => {
+                        return (
+                          <>
+                            <option>{element.EmployeeCode}</option>
+                          </>
+                        );
+                      })}
+                    </select>
+                  </form>
+                </div>
+                {/* ----------------------------------------------- Employee First Name:------------------------------------------------------- */}
+                <div class="row gx-3 mb-3">
+                  {/* <!-- Form Group (first name)--> */}
+                  <div class="col-md-6">
+                    <label class="small mb-1" for="inputFirstName">
+                      Employee First Name:
                     </label>
                     <form class="col-md-12">
                       <select
                         class="form-control select2"
-                        value={inpval.EmployeeCode}
-                        name="EmployeeCode"
+                        value={inpval.EmployeeFirstName}
+                        name="EmployeeFirstName"
                         onChange={setdata}
                       >
-                        <option>Select Code----</option>
+                        <option>Select First Name----</option>
 
                         {getuserdata.map((element, id) => {
                           return (
                             <>
-                              <option>{element.EmployeeCode}</option>
+                              <option>{element.EmployeeFirstName} </option>
                             </>
                           );
                         })}
                       </select>
                     </form>
                   </div>
-
-                  {/* -----------------------------------------------Department ID:------------------------------------------------------- */}
-                  <div class="mb-3">
-                    <label class="small mb-1" for="inputUsername">
-                      Department ID:
+                  {/* -----------------------------------------------DepartmentHead:------------------------------------------------------- */}
+                  <div class="col-md-6">
+                    <label class="small mb-1" for="inputLastName">
+                      Employee Last Name:
                     </label>
                     <form class="col-md-12">
                       <select
                         class="form-control select2"
-                        value={inpval.DepartmentID}
-                        name="DepartmentID"
+                        value={inpval.EmployeeLastName}
+                        name="EmployeeLastName"
                         onChange={setdata}
                       >
-                        <option>Select Code----</option>
+                        <option>Select Last Name----</option>
 
                         {getuserdata.map((element, id) => {
                           return (
                             <>
-                              <option>{element.EmployeeCode}</option>
+                              <option>{element.EmployeeLastName}</option>
                             </>
                           );
                         })}
                       </select>
                     </form>
                   </div>
-                  {/* ----------------------------------------------- Employee First Name:------------------------------------------------------- */}
-                  <div class="row gx-3 mb-3">
-                    {/* <!-- Form Group (first name)--> */}
-                    <div class="col-md-6">
-                      <label class="small mb-1" for="inputFirstName">
-                        Employee First Name:
-                      </label>
-                      <form class="col-md-12">
-                        <select
-                          class="form-control select2"
-                          value={inpval.EmployeeFirstName}
-                          name="EmployeeFirstName"
-                          onChange={setdata}
-                        >
-                          <option>Select First Name----</option>
+                </div>
+                {/* ----------------------------------------------- Employee LastName:------------------------------------------------------- */}
+                <div class="row gx-3 mb-3">
+                  {/* <!-- Form Group (first name)--> */}
+                  <div class="col-md-6">
+                    <label class="small mb-1" for="inputFirstName">
+                      Department Name:
+                    </label>
 
-                          {getuserdata.map((element, id) => {
-                            return (
-                              <>
-                                <option>{element.EmployeeFirstName} </option>
-                              </>
-                            );
-                          })}
-                        </select>
-                      </form>
-                    </div>
-                    {/* -----------------------------------------------DepartmentHead:------------------------------------------------------- */}
-                    <div class="col-md-6">
-                      <label class="small mb-1" for="inputLastName">
-                        Employee Last Name:
-                      </label>
-                      <form class="col-md-12">
-                        <select
-                          class="form-control select2"
-                          value={inpval.EmployeeLastName}
-                          name="EmployeeLastName"
-                          onChange={setdata}
-                        >
-                          <option>Select Last Name----</option>
+                    <form class="col-md-12">
+                      <select
+                        class="form-control select2"
+                        value={inpval.DepartmentName}
+                        onChange={setdata}
+                        name="DepartmentName"
+                      >
+                        <option>Select Department----</option>
+                        <option>GITL</option>
+                        <option>DGTL</option>
 
-                          {getuserdata.map((element, id) => {
-                            return (
-                              <>
-                                <option>{element.EmployeeLastName}</option>
-                              </>
-                            );
-                          })}
-                        </select>
-                      </form>
-                    </div>
-                  </div>
-                  {/* ----------------------------------------------- Employee LastName:------------------------------------------------------- */}
-                  <div class="row gx-3 mb-3">
-                    {/* <!-- Form Group (first name)--> */}
-                    <div class="col-md-6">
-                      <label class="small mb-1" for="inputFirstName">
-                        Department Name:
-                      </label>
-
-                      <form class="col-md-12">
-                        <select
-                          class="form-control select2"
-                          value={inpval.DepartmentName}
-                          onChange={setdata}
-                          name="DepartmentName"
-                        >
-                          <option>Select Department----</option>
-                          <option>GITL</option>
-                          <option>DGTL</option>
-
-                          {/* {getuserdata.map((element, id) => {
+                        {/* {getuserdata.map((element, id) => {
                       return (
                         <>
                           <option>{element.EmployeeDepartment}</option>
                         </>
                       );
                     })} */}
-                        </select>
-                      </form>
-                    </div>
-                    {/* -----------------------------------------------DepartmentHead:------------------------------------------------------- */}
-                    <div class="col-md-6">
-                      <label class="small mb-1" for="inputLastName">
-                        Department Head:
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter DepartmentHead"
-                        id="ExampleInputDepartmentHead"
-                        value={inpval.DepartmentHead}
-                        onChange={setdata}
-                        name="DepartmentHead"
-                      />
-                    </div>
+                      </select>
+                    </form>
                   </div>
-                  {/* -----------------------------------------------Date Of Joining:------------------------------------------------------- */}
-                  <div class="row gx-3 mb-3">
-                    {/* <!-- Form Group (organization name)--> */}
-                    <div class="col-md-6">
-                      <label class="small mb-1" for="inputLocation">
-                        Date Of Joining:
-                      </label>
-                      <br></br>
+                  {/* -----------------------------------------------DepartmentHead:------------------------------------------------------- */}
+                  <div class="col-md-6">
+                    <label class="small mb-1" for="inputLastName">
+                      Department Head:
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Enter DepartmentHead"
+                      id="ExampleInputDepartmentHead"
+                      value={inpval.DepartmentHead}
+                      onChange={setdata}
+                      name="DepartmentHead"
+                    />
+                  </div>
+                </div>
+                {/* -----------------------------------------------Date Of Joining:------------------------------------------------------- */}
+                <div class="row gx-3 mb-3">
+                  {/* <!-- Form Group (organization name)--> */}
+                  <div class="col-md-6">
+                    <label class="small mb-1" for="inputLocation">
+                      Date Of Joining:
+                    </label>
+                    <br></br>
+                    <input
+                      type="date"
+                      className="form-control"
+                      placeholder="dd/mm/yyyy"
+                      id="ExampleInputL1"
+                      value={inpval.DateOfJoining}
+                      onChange={setdata}
+                      name="DateOfJoining"
+                    />
+                  </div>
+                  {/* -----------------------------------------------Last Joining:------------------------------------------------------- */}
+                  <div class="col-md-6">
+                    <label class="small mb-1" for="inputFirstName">
+                      LastDate:
+                    </label>
+                    <input
+                      type="date"
+                      className="form-control"
+                      placeholder="dd/mm/yyyy"
+                      id="ExampleInputL1"
+                      value={inpval.LastDate}
+                      onChange={setdata}
+                      name="LastDate"
+                    />
+                  </div>
+                </div>
+                <div class="row gx-3 mb-3">
+                  {/* ----------------------------------------------- Till Date:------------------------------------------------------- */}
+                  <div class="col-md-6">
+                    <label class="small mb-1" for="inputLastName">
+                      Till Date:
+                    </label>
+                    <div class="form-check">
                       <input
-                        type="date"
-                        className="form-control"
-                        placeholder="dd/mm/yyyy"
-                        id="ExampleInputL1"
-                        value={inpval.DateOfJoining}
-                        onChange={setdata}
-                        name="DateOfJoining"
-                      />
-                    </div>
-                    {/* -----------------------------------------------Last Joining:------------------------------------------------------- */}
-                    <div class="col-md-6">
-                      <label class="small mb-1" for="inputFirstName">
-                        LastDate:
-                      </label>
-                      <input
-                        type="date"
-                        className="form-control"
-                        placeholder="dd/mm/yyyy"
-                        id="ExampleInputL1"
-                        value={inpval.LastDate}
+                        class="form-check-input"
+                        type="checkbox"
+                        value={"-"}
                         onChange={setdata}
                         name="LastDate"
+                        id="flexRadioDefault1"
+                      ></input>
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Till Date
+                      </label>
+                    </div>
+                  </div>
+                  {/* --------------------------------------------------------------------Ststus----------------------------------------- */}
+                  <div class="col-md-6">
+                    <label class="small mb-1" for="inputFirstName">
+                      Status:
+                    </label>
+                    <br></br>
+                    <>
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="Status"
+                        value="Active"
+                        onChange={setdata}
+                        id="success-outlined"
                       />
-                    </div>
-                  </div>
-                  <div class="row gx-3 mb-3">
-                    {/* ----------------------------------------------- Till Date:------------------------------------------------------- */}
-                    <div class="col-md-6">
-                      <label class="small mb-1" for="inputLastName">
-                        Till Date:
+                      <label
+                        class=" btn btn-outline-success"
+                        for="success-outlined"
+                      >
+                        Active
+                      </label>{" "}
+                    </>
+                    <>
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="Status"
+                        value="Not-Active"
+                        onChange={setdata}
+                        id="danger-outlined"
+                      />
+                      <label
+                        class="btn btn-outline-danger"
+                        for="danger-outlined"
+                      >
+                        Not-Active
                       </label>
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          value={"-"}
-                          onChange={setdata}
-                          name="LastDate"
-                          id="flexRadioDefault1"
-                        ></input>
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Till Date
-                        </label>
-                      </div>
-                    </div>
-                    {/* --------------------------------------------------------------------Ststus----------------------------------------- */}
-                    <div class="col-md-6">
-                      <label class="small mb-1" for="inputFirstName">
-                        Status:
-                      </label>
-                      <br></br>
-                      <>
-                        <input
-                          type="radio"
-                          class="btn-check"
-                          name="Status"
-                          value="Active"
-                          onChange={setdata}
-                          id="success-outlined"
-                        />
-                        <label
-                          class=" btn btn-outline-success"
-                          for="success-outlined"
-                        >
-                          Active
-                        </label>{" "}
-                      </>
-                      <>
-                        <input
-                          type="radio"
-                          class="btn-check"
-                          name="Status"
-                          value="Not-Active"
-                          onChange={setdata}
-                          id="danger-outlined"
-                        />
-                        <label
-                          class="btn btn-outline-danger"
-                          for="danger-outlined"
-                        >
-                          Not-Active
-                        </label>
-                        {"  "}
-                      </>
-                    </div>
-                    {/* -----------------------------------------------Till Date:------------------------------------------------------- */}
+                      {"  "}
+                    </>
                   </div>
+                  {/* -----------------------------------------------Till Date:------------------------------------------------------- */}
+                </div>
 
-                  {/* -----------------------------------------------submit------------------------------------------------------- */}
+                {/* -----------------------------------------------submit------------------------------------------------------- */}
 
-                  {/* <!-- Save changes button--> */}
-                  <div className="d-grid gap-2 d-md-flex justify-content-md-center">
-                    {/* <button type="back" className="btn btn-primary">
+                {/* <!-- Save changes button--> */}
+                <div className="d-grid gap-2 d-md-flex justify-content-md-center">
+                  {/* <button type="back" className="btn btn-primary">
                     <a href="/employee">Back</a>
                     Back
                   </button> */}
-                    <button
-                      type="submit"
-                      required
-                      onClick={addinpdata}
-                      disabled={
-                        (!inpval.EmployeeCode,
-                        !inpval.DepartmentID,
-                        !inpval.EmployeeFirstName,
-                        !inpval.EmployeeLastName,
-                        !inpval.DepartmentName,
-                        !inpval.DepartmentHead,
-                        !inpval.DateOfJoining,
-                        !inpval.LastDate,
-                        !inpval.Status)
-                      }
-                      // onClick={() => {
-                      //   addinpdata();
-                      // }}
-                      className="btn btn-success "
-                    >
-                      Submit
-                    </button>
-                  </div>
-                </form>
-              </div>
+                  <button
+                    type="submit"
+                    required
+                    onClick={addinpdata}
+                    disabled={
+                      (!inpval.EmployeeCode,
+                      !inpval.DepartmentID,
+                      !inpval.EmployeeFirstName,
+                      !inpval.EmployeeLastName,
+                      !inpval.DepartmentName,
+                      !inpval.DepartmentHead,
+                      !inpval.DateOfJoining,
+                      !inpval.LastDate,
+                      !inpval.Status)
+                    }
+                    // onClick={() => {
+                    //   addinpdata();
+                    // }}
+                    className="btn btn-success "
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
-          {/* -----------------------------------------------Profile------------------------------------------------------- */}
-
-          {/* <div class="col-xl-4">
-          <div class="card mb-4 mb-xl-0">
-            <div class="card-header">Profile Picture</div>
-            <div class="card-body text-center">
-              <img src={file} style={{ width: 100 }} />
-
-              <div class="small font-italic text-muted mb-4">
-                JPG or PNG no larger than 50kb
-              </div>
-              <input
-                type="file"
-                className="form-control"
-                placeholder="Enter UserName"
-                id="ExampleInputPassword1"
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-        </div> */}
+        </div>
+        <div>
+          <br></br>
+          <Footer />
+          <br></br>
         </div>
       </div>
     </div>

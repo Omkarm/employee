@@ -1,11 +1,14 @@
-.imgalign img{
-    text-align: left;
+.imgalign{
+    background-color: white;
+    text-align: center;
+    padding-top: 10px;
 }
+
 
 
 .split {
     height: 100%;
-    width: 5%;
+    width: 8%;
     position: fixed;
     z-index: 2;
     top: 0;
@@ -13,36 +16,42 @@
     padding-top: 20px;
 }
 
+
+
 .splitr {
-    height: 100%;
+    height: 80%;
     width: 90%;
     position: fixed;
     z-index: 1;
-    top: 60px;
+    top: 120px;
     overflow-x: hidden;
     padding-top: 20px;
     padding-right: 20px;
 }
 
 /* .splittop {
-    height: 50%;
-    width: 20%;
+    height: 15%;
+    width: 100%;
     position: absolute;
-    z-index: 2;
     top: 0;
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 10px;
+    left: 120px;
 } */
 .splittop1 {
     height: 50%;
     width: 100%;
     position: absolute;
-    /* z-index: -1; */
-    top: 0;
+    top: 60px;
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-right: 10px;
 }
 
+
+.splitbottom {
+    text-align: center;
+}
 /* Control the left side */
 .left {
     left: 0;
@@ -60,3 +69,7 @@
     right: 0;
     background-color: rgb(255, 255, 255);
 }
+
+/* .top1 {
+    right: 0;
+    background-color: rgb(255, 255, 255);} */

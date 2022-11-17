@@ -18,12 +18,14 @@
 }
 
 
+
 .card1 {
     width: 500px;
     height: 150px;
     box-shadow: rgb(0 0 0 / 15%) 1px 1px 10px;
     border-radius: 25px;
     border: 1px solid #d3d3d3;
+    
 }
 
 .card2 {
