@@ -3,9 +3,21 @@
     text-align: center;
     padding-top: 10px;
 }
+.imgalignfooter {
+    background-color: white;
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 100px;
+}
 
+.footer{padding-top: 15px;
+    padding-left:0px;
+}
 
+.github{
+padding-left: 0px;
 
+}
 .split {
     height: 100%;
     width: 8%;
@@ -63,6 +75,8 @@
     right: 0;
     background-color: white;
 }
+
+
 
 /* Control the top side */
 .top {

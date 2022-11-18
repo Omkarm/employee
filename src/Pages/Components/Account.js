@@ -16,9 +16,9 @@ const Account = () => {
       </div>
       <div className="splittop1 top">
         <div class="d-flex justify-content-end">
-          <p class="text-end">
+          <div className="text">
             <h4>Omkar More</h4>
-          </p>
+          </div>
           <div className="nav-item dropdown">
             <a
               className="nav-link active dropdown-toggle"

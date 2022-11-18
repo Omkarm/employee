@@ -1,7 +1,17 @@
 .card-body {
-    height: 430px;
+    height: 1200px;
     /* background-color: rgb(198, 10, 10); */
 }
+
+.card-body1 {
+    height: 950px;
+    /* background-color: rgb(198, 10, 10); */
+}
+
+.cardprofile-body{
+    height: 150px;
+}
+
 
 .card-body1 {
     padding: 15px;
@@ -53,6 +63,9 @@
     padding-left: 35px;
 }
 
+.blank{
+    width: 200px;
+}
 
 
 .empbtn button {

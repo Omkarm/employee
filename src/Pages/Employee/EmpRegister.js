@@ -313,10 +313,37 @@ const EmpRegister = () => {
       {/* <!-- Account page navigation--> */}
       <div className="splitr right">
         <div class="row">
-          <div class="col-xl-8">
+          <div class="col-xl-12">
             {/* <!-- Account details card--> */}
             <div class="card mb-4">
               <div class="card-header">Employee Joining Details</div>
+              <br></br>
+              <div class="cardprofile-body text-center">
+                {/* <!-- Profile picture image--> */}
+                <img src={file} style={{ width: 100 }} />
+
+                {/* <!-- Profile picture help block--> */}
+                <div class="small font-italic text-muted mb-4">
+                  JPG or PNG no larger than 50kb
+                </div>
+
+                {/* <!-- Profile picture upload button--> */}
+                {/* <input
+                type="file"
+                className="form-control"
+                placeholder="Enter UserName"
+                id="ExampleInputPassword1"
+                onChange={handleChange}
+                name="Profile"
+              /> */}
+                {/* <button onClick={handleApi}>SUBMIT</button> */}
+                <form onSubmit={onSubmitHandler}>
+                  <input type="file" onChange={filechangeHandler}></input>
+                  {/* <input type="submit" value="Upload"></input> */}
+                  <button type="submit">Submit</button>
+                </form>
+              </div>
+
               <div class="card-body">
                 <form onSubmit={addinpdata}>
                   {/* -----------------------------------------------EmployeeCode------------------------------------------------------- */}
@@ -621,6 +648,200 @@ const EmpRegister = () => {
                     </div>
                   </div>
                   <br></br>
+
+                  <div class="card-header">Skills</div>
+                  <div class="cardskills-body text-center">
+                    {/* <!-- Profile picture image--> */}
+                    {/* <Multiselect
+                  isObject={false}
+                  onKeyPressFn={function noRefCheck() {}}
+                  onRemove={function noRefCheck() {}}
+                  onSearch={function noRefCheck() {}}
+                  onSelect={function noRefCheck() {}}
+                  options={["Html", "Css", "Java", "React Js", "Node Js"]}
+                /> */}
+
+                    <form>
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="form-check m-3">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name="languages"
+                              value="Javascript"
+                              id="flexCheckDefault"
+                              onChange={handleChange}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="flexCheckDefault"
+                            >
+                              Javascript
+                            </label>
+                          </div>
+                          <div className="form-check m-3">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name="languages"
+                              value="Python"
+                              id="flexCheckDefault"
+                              onChange={handleChange}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="flexCheckDefault"
+                            >
+                              Python
+                            </label>
+                          </div>
+                          <div className="form-check m-3">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name="languages"
+                              value="Java"
+                              id="flexCheckDefault"
+                              onChange={handleChange}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="flexCheckDefault"
+                            >
+                              Java
+                            </label>
+                          </div>
+                          <div className="form-check m-3">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name="languages"
+                              value="Node"
+                              id="flexCheckDefault"
+                              onChange={handleChange}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="flexCheckDefault"
+                            >
+                              Node
+                            </label>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="form-check m-3">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name="languages"
+                              value="C#"
+                              id="flexCheckDefault"
+                              onChange={handleChange}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="flexCheckDefault"
+                            >
+                              C#
+                            </label>
+                          </div>
+                          <div className="form-check m-3">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name="languages"
+                              value="C++"
+                              id="flexCheckDefault"
+                              onChange={handleChange}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="flexCheckDefault"
+                            >
+                              C++
+                            </label>
+                          </div>
+                          <div className="form-check m-3">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name="Skills"
+                              value="C"
+                              id="flexCheckDefault"
+                              onChange={handleChange}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="flexCheckDefault"
+                            >
+                              C
+                            </label>
+                          </div>
+                          <div className="form-check m-3">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name="Skills"
+                              value="React"
+                              id="flexCheckDefault"
+                              onChange={handleChange}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="flexCheckDefault"
+                            >
+                              React
+                            </label>
+                          </div>
+                        </div>
+                        {/* <div class="md-12">
+                      <label class="small mb-1" for="inputSkills">
+                        Other:{" "}
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Skills"
+                        id="ExampleInputSalary"
+                        value={userinfo.Skills}
+                        onChange={handleChange}
+                        name="Skills"
+                      />
+                    </div> */}
+                      </div>
+                      {/* <div class="md-6">
+                    <label class="small mb-1" for="inputLastName">
+                      Other Skills:
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      className="form-control"
+                      placeholder="Enter L+1"
+                      id="ExampleInputL1"
+                      value={userinfo.Skills}
+                      onChange={handleChange}
+                      name="Skills"
+                    />
+                  </div> */}
+
+                      <div className="form-floating mt-3 mb-3 text-center">
+                        <label htmlFor="exampleFormControlTextarea1">
+                          {/* languages :{" "} */}
+                        </label>
+                        <textarea
+                          className="form-control text"
+                          name="response"
+                          value={userinfo.Skills}
+                          placeholder="The checkbox values will be displayed here "
+                          id="floatingTextarea2"
+                          style={{ height: "150px" }}
+                          onChange={handleChange}
+                        ></textarea>
+                      </div>
+                    </form>
+                  </div>
                   {/* -----------------------------------------------submit------------------------------------------------------- */}
 
                   {/* <!-- Save changes button--> */}
@@ -650,7 +871,19 @@ const EmpRegister = () => {
                   >
                     Submit
                   </button> */}
-
+                  </div>
+                  <br></br>
+                  <div
+                    className="backnext"
+                    style={{
+                      flex: 2,
+                      flexDirection: "row",
+                      marginLeft: 20,
+                    }}
+                  >
+                    <NavLink to={`/employee`}>
+                      <button className="btn btn-dark ">Back</button>
+                    </NavLink>
                     <NavLink to={`/deptregister`}>
                       <button
                         type="submit"
@@ -666,11 +899,19 @@ const EmpRegister = () => {
                           !inpval.EmployeeGrade,
                           !inpval.EmployeeDepartment,
                           !inpval.EmployeeL1,
-                          !inpval.DateOfJoining)
+                          !inpval.DateOfJoining,
+                          !inpval.EmployeeBirthdate,
+                          !inpval.EmployeePhone)
                         } // onClick={() => {
                         //   addinpdata();
                         // }}
                         className="btn btn-dark "
+                        style={{
+                          flex: 2,
+                          flexDirection: "row",
+                          marginLeft: 20,
+                          float: "right",
+                        }}
                       >
                         Next
                       </button>
@@ -681,236 +922,6 @@ const EmpRegister = () => {
             </div>
           </div>
           {/* -----------------------------------------------Profile------------------------------------------------------- */}
-
-          <div class="col-xl-4 mg-10">
-            <div class="row">
-              {/* <!-- Profile picture card--> */}
-              <div class="card mb-4  mg-10mb-xl-0">
-                <div class="card-header">Profile Picture</div>
-                <div class="card-body text-center">
-                  {/* <!-- Profile picture image--> */}
-                  <img src={file} style={{ width: 100 }} />
-
-                  {/* <!-- Profile picture help block--> */}
-                  <div class="small font-italic text-muted mb-4">
-                    JPG or PNG no larger than 50kb
-                  </div>
-
-                  {/* <!-- Profile picture upload button--> */}
-                  {/* <input
-                type="file"
-                className="form-control"
-                placeholder="Enter UserName"
-                id="ExampleInputPassword1"
-                onChange={handleChange}
-                name="Profile"
-              /> */}
-                  {/* <button onClick={handleApi}>SUBMIT</button> */}
-                  <form onSubmit={onSubmitHandler}>
-                    <input type="file" onChange={filechangeHandler}></input>
-                    {/* <input type="submit" value="Upload"></input> */}
-                    <button type="submit">Submit</button>
-                  </form>
-                </div>
-              </div>
-
-              <div class="card mb-4 mg-10 mb-xl-0">
-                <div class="card-header">Skills</div>
-                <div class="card-body text-center">
-                  {/* <!-- Profile picture image--> */}
-                  {/* <Multiselect
-                  isObject={false}
-                  onKeyPressFn={function noRefCheck() {}}
-                  onRemove={function noRefCheck() {}}
-                  onSearch={function noRefCheck() {}}
-                  onSelect={function noRefCheck() {}}
-                  options={["Html", "Css", "Java", "React Js", "Node Js"]}
-                /> */}
-
-                  <form>
-                    <div className="row">
-                      <div className="col-md-6">
-                        <div className="form-check m-3">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="languages"
-                            value="Javascript"
-                            id="flexCheckDefault"
-                            onChange={handleChange}
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor="flexCheckDefault"
-                          >
-                            Javascript
-                          </label>
-                        </div>
-                        <div className="form-check m-3">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="languages"
-                            value="Python"
-                            id="flexCheckDefault"
-                            onChange={handleChange}
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor="flexCheckDefault"
-                          >
-                            Python
-                          </label>
-                        </div>
-                        <div className="form-check m-3">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="languages"
-                            value="Java"
-                            id="flexCheckDefault"
-                            onChange={handleChange}
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor="flexCheckDefault"
-                          >
-                            Java
-                          </label>
-                        </div>
-                        <div className="form-check m-3">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="languages"
-                            value="Node"
-                            id="flexCheckDefault"
-                            onChange={handleChange}
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor="flexCheckDefault"
-                          >
-                            Node
-                          </label>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="form-check m-3">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="languages"
-                            value="C#"
-                            id="flexCheckDefault"
-                            onChange={handleChange}
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor="flexCheckDefault"
-                          >
-                            C#
-                          </label>
-                        </div>
-                        <div className="form-check m-3">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="languages"
-                            value="C++"
-                            id="flexCheckDefault"
-                            onChange={handleChange}
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor="flexCheckDefault"
-                          >
-                            C++
-                          </label>
-                        </div>
-                        <div className="form-check m-3">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="Skills"
-                            value="C"
-                            id="flexCheckDefault"
-                            onChange={handleChange}
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor="flexCheckDefault"
-                          >
-                            C
-                          </label>
-                        </div>
-                        <div className="form-check m-3">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="Skills"
-                            value="React"
-                            id="flexCheckDefault"
-                            onChange={handleChange}
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor="flexCheckDefault"
-                          >
-                            React
-                          </label>
-                        </div>
-                      </div>
-                      {/* <div class="md-12">
-                      <label class="small mb-1" for="inputSkills">
-                        Other:{" "}
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Skills"
-                        id="ExampleInputSalary"
-                        value={userinfo.Skills}
-                        onChange={handleChange}
-                        name="Skills"
-                      />
-                    </div> */}
-                    </div>
-                    {/* <div class="md-6">
-                    <label class="small mb-1" for="inputLastName">
-                      Other Skills:
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="form-control"
-                      placeholder="Enter L+1"
-                      id="ExampleInputL1"
-                      value={userinfo.Skills}
-                      onChange={handleChange}
-                      name="Skills"
-                    />
-                  </div> */}
-
-                    <div className="form-floating mt-3 mb-3 text-center">
-                      <label htmlFor="exampleFormControlTextarea1">
-                        {/* languages :{" "} */}
-                      </label>
-                      <textarea
-                        className="form-control text"
-                        name="response"
-                        value={userinfo.Skills}
-                        placeholder="The checkbox values will be displayed here "
-                        id="floatingTextarea2"
-                        style={{ height: "150px" }}
-                        onChange={handleChange}
-                      ></textarea>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

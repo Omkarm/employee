@@ -103,95 +103,98 @@ const Department = () => {
                 </NavLink> */}
                   </div>
                 </div>
+                <div className="table-responsive">
+                  <table class="table table-bordered border auto-index">
+                    <thead>
+                      <tr className="table-light">
+                        <th scope="col">Action</th>
+                        <th scope="col">Sr No</th>
+                        <th scope="col">EmployeeCode</th>
+                        {/* <th scope="col">DepartmentID</th> */}
 
-                <table class="table table-bordered border auto-index">
-                  <thead>
-                    <tr className="table-light">
-                      <th scope="col">Action</th>
-                      <th scope="col">Sr No</th>
-                      <th scope="col">EmployeeCode</th>
-                      {/* <th scope="col">DepartmentID</th> */}
+                        <th scope="col">FirstName</th>
+                        <th scope="col">LastName</th>
 
-                      <th scope="col">FirstName</th>
-                      <th scope="col">LastName</th>
-
-                      <th scope="col">Department Name</th>
-                      <th scope="col">Department Head</th>
-                      <th scope="col">DateOfJoining</th>
-                      <th scope="col">LastDate</th>
-                      <th scope="col">Status</th>
-                      <th scope="col"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {getuserdata.map((element, id) => {
-                      return (
-                        <>
-                          <tr>
-                            <td>
-                              <NavLink
-                                to={`/departedit/${element.EmployeeCode}`}
-                              >
-                                <button className="btn btn-link">
-                                  <b>edit</b>
-                                </button>
-                              </NavLink>
-                            </td>
-                            <td>
-                              <b>{id++}</b>
-                            </td>
-                            <th scope="row">{element.EmployeeCode}</th>
-                            {/* <td>
+                        <th scope="col">Department Name</th>
+                        <th scope="col">Department Head</th>
+                        <th scope="col">DateOfJoining</th>
+                        <th scope="col">LastDate</th>
+                        <th scope="col">Status</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {getuserdata.map((element, id) => {
+                        return (
+                          <>
+                            <tr>
+                              <td>
+                                <NavLink
+                                  to={`/departedit/${element.EmployeeCode}`}
+                                >
+                                  <button className="btn btn-link">
+                                    <b>edit</b>
+                                  </button>
+                                </NavLink>
+                              </td>
+                              <td>
+                                <b>{id++}</b>
+                              </td>
+                              <th scope="row">{element.EmployeeCode}</th>
+                              {/* <td>
                           <b>{element.DepartmentID}</b>
                         </td> */}
-                            <td>
-                              <b>{element.EmployeeFirstName}</b>
-                            </td>
-                            <td>
-                              <b>{element.EmployeeLastName}</b>
-                            </td>
-                            <td>
-                              <b>{element.DepartmentName}</b>
-                            </td>
-                            <td>
-                              <b>{element.DepartmentHead}</b>
-                            </td>
-                            <td>
-                              <b>{element.DateOfJoining}</b>
-                            </td>
-                            <td>
-                              <b>{element.LastDate}</b>
-                            </td>
+                              <td>
+                                <b>{element.EmployeeFirstName}</b>
+                              </td>
+                              <td>
+                                <b>{element.EmployeeLastName}</b>
+                              </td>
+                              <td>
+                                <b>{element.DepartmentName}</b>
+                              </td>
+                              <td>
+                                <b>{element.DepartmentHead}</b>
+                              </td>
+                              <td>
+                                <b>{element.DateOfJoining}</b>
+                              </td>
+                              <td>
+                                <b>{element.LastDate}</b>
+                              </td>
 
-                            <td>
-                              <b>{element.Status}</b>
-                            </td>
+                              <td>
+                                <b>{element.Status}</b>
+                              </td>
 
-                            <td className="d-flex justify-content-between ">
-                              {/* <NavLink
+                              <td className="d-flex justify-content-between ">
+                                {/* <NavLink
                             to={`/departdetails/${element.EmployeeCode}`}
                           >
                             <button className="btn btn-success">read</button>
                           </NavLink> */}
-                              {/* <NavLink to={`/departedit/${element.EmployeeCode}`}>
+                                {/* <NavLink to={`/departedit/${element.EmployeeCode}`}>
                             <button className="btn btn-primary">update</button>
                           </NavLink> */}
-                              {/* <NavLink to={`/deleteuser/${element._id}`}>
+                                {/* <NavLink to={`/deleteuser/${element._id}`}>
                           <button className="btn btn-danger">Delete</button>
                           </NavLink> */}
-                              <button
-                                className="btn btn-danger"
-                                onClick={() => deleteuser(element.EmployeeCode)}
-                              >
-                                delete
-                              </button>
-                            </td>
-                          </tr>
-                        </>
-                      );
-                    })}
-                  </tbody>
-                </table>
+                                <button
+                                  className="btn btn-danger"
+                                  onClick={() =>
+                                    deleteuser(element.EmployeeCode)
+                                  }
+                                >
+                                  delete
+                                </button>
+                              </td>
+                            </tr>
+                          </>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
             {/* <nav aria-label="Page navigation example">
