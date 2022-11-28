@@ -144,7 +144,6 @@ const Dashboard = () => {
                 </div>
               </div>{" "}
             </div>
-            ////////////////////////////////
             <div class="col">
               <div class="card2">
                 <div class="card-body2">

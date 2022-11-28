@@ -1,7 +1,6 @@
-let urlpost = "https://329i7alj9c.execute-api.us-east-1.amazonaws.com/employee";
+let urlpost = "http://localhost:5000/employee";
 
-let urlget =
-  "https://329i7alj9c.execute-api.us-east-1.amazonaws.com/employee/get";
+let urlget = "http://localhost:5000/employee/get";
 
 let urlgetid =
   "https://329i7alj9c.execute-api.us-east-1.amazonaws.com/employee/getid/:id";
@@ -9,8 +8,7 @@ let urlgetid =
 let urldelete =
   "https://329i7alj9c.execute-api.us-east-1.amazonaws.com/employee/delete/:id";
 
-let urlupdate =
-  "https://329i7alj9c.execute-api.us-east-1.amazonaws.com/employee";
+let urlupdate = "http://localhost:5000/employee/update";
 
 let urldpost =
   "https://329i7alj9c.execute-api.us-east-1.amazonaws.com/department";

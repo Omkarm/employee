@@ -1,6 +1,9 @@
 .card-body {
-    height: 1200px;
+    height: 12cm00px;
     /* background-color: rgb(198, 10, 10); */
+}
+.main {
+    background-color: white;
 }
 
 .card-body1 {

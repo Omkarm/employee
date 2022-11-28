@@ -42,15 +42,14 @@ import EmpEdit from "./Pages/Employee/EmpEdit";
 import Acount from "./Pages/Components/Account";
 import Account from "./Pages/Components/Account";
 import Dashboard from "./Pages/Components/Dashboard";
-
+import Empupdate from "./Pages/Employee/Empupdate";
 function App() {
   return (
     <div className="Main">
       {/* <Home /> */}
       {/* <Navbar1 /> */}
-
+      <Login />
       <BrowserRouter>
-        <Account />
         <Routes>
           <Route path="/login" element={<Login></Login>} />
 
@@ -66,11 +65,15 @@ function App() {
             path="/employee"
             element={[<Employee></Employee>, <Home></Home>]}
           />
+
+          <Route
+            path="/empupdate/:id"
+            element={[<Empupdate></Empupdate>, <Home></Home>]}
+          />
           <Route
             path="/department"
             element={[<Department></Department>, <Home></Home>, <Account />]}
           />
-          <Route path="/learn" element={<Learn></Learn>} />
           <Route path="/newuser" element={<Newuser></Newuser>} />
           <Route path="/edit/:id" element={<Edit></Edit>} />
           <Route path="/departedit/:id" element={<DepartEdit></DepartEdit>} />

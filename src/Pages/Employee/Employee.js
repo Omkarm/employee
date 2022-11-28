@@ -298,7 +298,7 @@ const Employee = () => {
                       <th scope="col">Age</th>
                       <th scope="col">Gender</th>
                       <th scope="col">Birthdate</th>
-                      <th scope="col">Phone Number</th>
+                      <th scope="col">PhoneNumber</th>
                       <th scope="col">Salary</th>
                       <th scope="col">Grade</th>
                       <th scope="col">Skills</th>
@@ -317,14 +317,16 @@ const Employee = () => {
                         <>
                           <tr>
                             <td>
-                              <NavLink to={`/empedit/${element.EmployeeCode}`}>
+                              <NavLink
+                                to={`/empupdate/${element.EmployeeCode}`}
+                              >
                                 <button className="btn btn-link">
                                   <b>edit</b>
                                 </button>
                               </NavLink>
                             </td>
                             <th scope="row">
-                              <b>{id++}</b>
+                              <b>{id + 1}</b>
                             </th>
                             <td>
                               <img src={file} />

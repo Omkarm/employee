@@ -224,7 +224,7 @@ const DepartRegister = () => {
                           {getuserdata.map((element, id) => {
                             return (
                               <>
-                                <option>{element.EmployeeFirstName} </option>
+                                <option> {element.EmployeeFirstName} </option>
                               </>
                             );
                           })}
